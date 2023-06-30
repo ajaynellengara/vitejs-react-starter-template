@@ -1,0 +1,55 @@
+@import '../../../styles/global-imports';
+
+.accordion_item {
+  .accordion_button {
+    @include defaultValue;
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+
+    &.active {
+      &::after {
+        content: '-';
+        width: 12px;
+        font-size: 22px;
+        transform: none;
+      }
+    }
+
+    &::after {
+      content: '+';
+      font-size: 20px;
+      line-height: 20px;
+      color: $text;
+      text-align: center;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      @include transition;
+    }
+  }
+
+  .accordion_body {
+    display: none;
+
+    &.active {
+      display: block;
+
+      .accordion_content {
+        height: auto;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .accordion_content {
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      @include transition;
+    }
+  }
+}
