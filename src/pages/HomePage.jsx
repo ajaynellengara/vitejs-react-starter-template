@@ -1,5 +1,4 @@
 import React from 'react';
-import { About } from '../pages/About';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -74,7 +73,6 @@ export const Home = () => {
           </div>
         </div>
       </section>
-      <About />
     </>
   );
 };
