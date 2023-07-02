@@ -1,8 +1,8 @@
-@import '../../../styles/global-imports';
+@import './../../styles/global-imports.scss';
 
 .accordion_item {
   .accordion_button {
-    @include defaultValue;
+    // @include defaultValue;
     width: 100%;
     display: block;
     position: relative;
@@ -28,7 +28,7 @@
       top: 0;
       right: 0;
       bottom: 0;
-      @include transition;
+      // @include transition;
     }
   }
 
@@ -49,7 +49,7 @@
       height: 0;
       opacity: 0;
       visibility: hidden;
-      @include transition;
+      // @include transition;
     }
   }
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useImperativeHandle } from 'react';
-// import './style';
+import './style.scss';
 
 const Accordion = React.forwardRef(
   ({ title, content, isOpenDefault, closeOnOutsideClick }, ref) => {
