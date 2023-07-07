@@ -1,0 +1,316 @@
+@import './../../styles/global-imports.scss';
+
+footer {
+  background-color: rgba($black, 0.1);
+  animation-duration: 0.5s;
+  padding-top: 20px;
+  @include transition;
+
+  @media only screen and (min-width: 768px) {
+    padding-top: 30px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    padding-top: 60px;
+  }
+
+  .footer_logo {
+    display: block;
+    @include transition;
+
+    svg,
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      display: block;
+      @include transition;
+
+      @media only screen and (min-width: 768px) {
+        width: 80px;
+        height: 80px;
+      }
+
+      @media only screen and (min-width: 1200px) {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  .footer_tle {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: $text;
+    margin-bottom: 15px;
+    display: block;
+    text-transform: capitalize;
+    position: relative;
+    z-index: 1;
+
+    @media only screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media only screen and (min-width: 992px) {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      font-size: 20px;
+      margin-bottom: 35px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 35px;
+      height: 1px;
+      background-color: $basecolor;
+      display: block;
+
+      @media only screen and (min-width: 992px) {
+        height: 3px;
+        bottom: -10px;
+      }
+    }
+  }
+
+  .footer_info_list {
+    list-style: none;
+    margin: 0 0 10px 0;
+    @include flex(wrap, unset, unset);
+
+    @media only screen and (min-width: 576px) {
+      justify-content: space-between;
+    }
+
+    @media only screen and (min-width: 992px) {
+      margin: 0 0 15px 0;
+    }
+
+    li {
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      @media only screen and (min-width: 576px) {
+        width: fit-content;
+      }
+
+      @media only screen and (min-width: 992px) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      &:nth-child(1) {
+        width: 100%;
+        border-bottom: 1px dotted #c0c0c0;
+      }
+    }
+  }
+
+  .footer_nav_list {
+    list-style: none;
+    @include flex(wrap, unset, unset);
+
+    li {
+      width: 100%;
+
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+
+        @media only screen and (min-width: 768px) {
+          margin-bottom: 15px;
+        }
+
+        @media only screen and (min-width: 1200px) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .footer_social_list {
+    list-style: none;
+    margin: 0 -8px 20px;
+    @include flex(wrap, unset, unset);
+
+    @media only screen and (min-width: 768px) {
+      margin: 0 -10px 40px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      margin: 0 -15px 60px;
+    }
+
+    li {
+      padding: 0 8px;
+
+      @media only screen and (min-width: 768px) {
+        padding: 0 10px;
+      }
+
+      @media only screen and (min-width: 1200px) {
+        padding: 0 15px;
+      }
+
+      a {
+        width: 16px;
+        height: 16px;
+        display: block;
+        @include transition;
+
+        @media only screen and (min-width: 768px) {
+          width: 18px;
+          height: 18px;
+        }
+
+        @media only screen and (min-width: 1441px) {
+          width: 22px;
+          height: 22px;
+        }
+
+        &:hover {
+          transform: translateY(-2px) rotate(-4deg);
+
+          img,
+          svg {
+            fill: $basecolor;
+          }
+        }
+
+        img,
+        svg {
+          fill: $basecolor2;
+          @include imgFit(cover);
+        }
+      }
+    }
+  }
+
+  .cmnLinks {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: $text;
+    transition: all 0.3s;
+    @include flex(wrap, unset, unset);
+
+    @media only screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      font-size: 18px;
+    }
+
+    &:hover {
+      color: $basecolor2;
+
+      span {
+        color: #ff0;
+      }
+
+      &[to='/'] {
+        span {
+          color: #f00;
+        }
+      }
+    }
+
+    .icon {
+      width: 20px;
+      height: auto;
+      margin-right: 8px;
+
+      @media only screen and (min-width: 992px) {
+        width: fit-content;
+        margin-right: 12px;
+      }
+    }
+
+    svg {
+      width: 22px;
+      height: auto;
+      max-height: 16px;
+
+      @media only screen and (min-width: 992px) {
+        max-height: 22px;
+      }
+    }
+  }
+
+  .accordion_item {
+    .accordion_button,
+    .accordion_button.active {
+      &::after {
+        @media only screen and (min-width: 768px) {
+          content: none;
+        }
+      }
+    }
+
+    .accordion_body {
+      @media only screen and (min-width: 768px) {
+        display: block;
+
+        .accordion_content {
+          height: auto;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  .footer_main {
+    .dFlx {
+      @include flex(wrap, unset, unset);
+
+      .Col {
+        width: 100%;
+        padding: 0 15px;
+        margin-bottom: 15px;
+
+        @media only screen and (min-width: 768px) {
+          width: calc(100% / 3);
+          margin-bottom: 20px;
+
+          &:nth-child(1) {
+            width: 100%;
+          }
+        }
+
+        @media only screen and (min-width: 992px) {
+          width: calc(100% / 4);
+          margin-bottom: 40px;
+
+          &:nth-child(1) {
+            width: 30%;
+            padding: 0 15px 0 15px;
+          }
+
+          &:nth-child(2) {
+            width: 25%;
+            padding: 0 15px 0 100px;
+          }
+
+          &:nth-child(3) {
+            width: 25%;
+            padding: 0 15px 0 40px;
+          }
+
+          &:nth-child(4) {
+            width: 20%;
+            padding: 0 15px 0 40px;
+          }
+        }
+      }
+    }
+  }
+}

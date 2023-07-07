@@ -2,7 +2,7 @@
 
 .accordion_item {
   .accordion_button {
-    // @include defaultValue;
+    @include defaultValue;
     width: 100%;
     display: block;
     position: relative;

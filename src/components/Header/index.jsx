@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logoImg from '../../assets/images/Twitter-logo-png.png';
 import Accordion from '../Accordion';
-// import './style';
 import './style.scss';
 
 export const Header = () => {

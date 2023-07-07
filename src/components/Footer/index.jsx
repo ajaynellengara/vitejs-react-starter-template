@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import logoImg from '../../assets/images/Twitter-logo-png.png';
 import Accordion from '../Accordion';
+import './style.scss';
 
 const Footer = () => {
   const accordionRef = useRef(null);
